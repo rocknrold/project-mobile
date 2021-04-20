@@ -28,6 +28,8 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+//        MainActivity.customToast(this, "Signup page", R.drawable.ic_baseline_account_circle_24);
+
         btnbacklogin = findViewById(R.id.btnSbackLogin);
         btnSregister = findViewById(R.id.btnSregister);
         etSname = findViewById(R.id.etSname);
@@ -52,8 +54,7 @@ public class SignupActivity extends AppCompatActivity {
         btnbacklogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                startActivity(intent);
+//                finish only
                 finish();
             }
         });

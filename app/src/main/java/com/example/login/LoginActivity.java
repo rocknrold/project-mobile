@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
 
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
         Button btnSignup = (Button) findViewById(R.id.btnSignup);
+
         etEmail = (EditText) findViewById(R.id.etEmail);
         etPassword = (EditText) findViewById(R.id.etPassword);
         cbxRemember = (CheckBox) findViewById(R.id.cbxRemember);
@@ -55,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
                     startActivity(intent);
-                    finish();
+//                remove the finish() here
                 }
             });
         }
@@ -81,31 +82,27 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(JSONObject response) {
                 SharedPreferences pref = getSharedPreferences("LOGIN_PREFERENCES", Activity.MODE_PRIVATE);
                 SharedPreferences.Editor editor = pref.edit();
-
-                if(cbxRemember.isChecked()){
-                    editor.putString("email",etEmail.getText().toString());
-                    editor.putString("password",etPassword.getText().toString());
-                    try {
-                        editor.putString("access_token",response.getString("access_token"));
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+//               TRAPPINGS FOR WRONG EMAIL AND PASSWORD
+                System.out.println(response.toString());
+                if(response.has("message")){
+                    MainActivity.customToast(LoginActivity.this,"Invalid Credentials", R.drawable.ic_baseline_account_circle_24);
                 } else {
-                    try {
+                    if(cbxRemember.isChecked() == true){
+                        editor.putString("email",etEmail.getText().toString());
+                        editor.putString("password",etPassword.getText().toString());
+                    } else {
                         editor.putString("email","guest");
                         editor.putString("password","guest");
+                    }
+                    try {
                         editor.putString("access_token",response.getString("access_token"));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
+                    //change to commit
+                    editor.commit();
+                    loadMain();
                 }
-                try {
-                    System.out.println(response.getString("access_token"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                editor.apply();
-                loadMain();
             }
         }, new Response.ErrorListener() {
             @Override
