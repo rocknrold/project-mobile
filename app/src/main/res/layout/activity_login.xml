@@ -4,121 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#F4F0D9">
+    tools:context=".LoginActivity">
 
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:backgroundTint="#F4F0D9"
-        app:strokeColor="@color/black"
-        app:cardElevation="8dp"
-        android:outlineAmbientShadowColor="@color/black"
+        android:layout_marginBottom="48dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/etPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="328dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <LinearLayout
-            android:padding="6dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="@+id/etPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                app:srcCompat="@drawable/movie_bytes_logo"
-                tools:layout_editor_absoluteX="97dp"
-                tools:layout_editor_absoluteY="141dp" />
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Signup"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfEmail"
-                style="@style/loginInputs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Email"
-                app:endIconMode="clear_text"
-                app:errorEnabled="false"
-                app:startIconDrawable="@drawable/ic_baseline_email_24">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfPassword"
-                style="@style/loginInputs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password"
-                app:endIconMode="password_toggle"
-                app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.SmallComponent"
-                app:startIconDrawable="@drawable/ic_baseline_lock_24"
-                app:errorEnabled="false">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/cbxRemember"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Remember me"
-                    android:checked="false"/>
-
-                <TextView
-                    android:id="@+id/btnForgotPass"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:text="Forgot Password?"
-                    android:textColor="@color/black"
-                    />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btnLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="login"
-                style="@style/loginButtons"
-                />
-
-
-            <TextView
-                android:id="@+id/btnRegister"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="Not yet Registered? Sign up"
-                android:textColor="@color/black"
-                />
-
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
+    <CheckBox
+        android:id="@+id/cbxRemember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember me"
+        app:layout_constraintEnd_toEndOf="@+id/btnSignup"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

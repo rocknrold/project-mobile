@@ -4,130 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#F4F0D9">
+    tools:context=".SignupActivity">
 
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/signUpCard"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/etSname"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:backgroundTint="#F4F0D9"
-        app:strokeColor="@color/black"
-        app:cardElevation="8dp"
-        android:outlineAmbientShadowColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:padding="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <EditText
+        android:id="@+id/etSemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSname" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfNameSign"
-                style="@style/loginInputs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Name"
-                app:endIconMode="clear_text"
-                app:startIconDrawable="@drawable/ic_baseline_person_24">
+    <EditText
+        android:id="@+id/etSpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSemail" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etNameSign"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress" />
+    <EditText
+        android:id="@+id/etSconfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Confirm Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSpass" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/btnSregister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="@+id/etSconfirm"
+        app:layout_constraintTop_toBottomOf="@+id/etSconfirm" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfEmailSign"
-                style="@style/loginInputs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Email"
-                app:endIconMode="clear_text"
-                app:startIconDrawable="@drawable/ic_baseline_email_24"
-                app:errorEnabled="false">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etEmailSign"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfPasswordSign"
-                style="@style/loginInputs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password"
-                app:endIconMode="password_toggle"
-                app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.SmallComponent"
-                app:startIconDrawable="@drawable/ic_baseline_lock_24"
-                app:counterEnabled="true"
-                app:counterMaxLength="8"
-                app:helperTextEnabled="true"
-                app:helperText="Password Length"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPasswordSign"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfConfirmSign"
-                style="@style/loginInputs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password"
-                app:endIconMode="password_toggle"
-                app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.SmallComponent"
-                app:startIconDrawable="@drawable/ic_baseline_lock_24"
-                app:counterEnabled="true"
-                app:counterMaxLength="8"
-                app:helperTextEnabled="true"
-                app:helperText="Password Length">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etConfirmSign"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                android:id="@+id/btnSign"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="sign up"
-                style="@style/loginButtons"
-                />
-
-            <TextView
-                android:id="@+id/btnBackLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="Already Signed Up? Login Now!"
-                android:textColor="@color/black"
-                />
-
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
+    <Button
+        android:id="@+id/btnSbackLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:text="Back to login"
+        app:layout_constraintEnd_toEndOf="@+id/btnSregister"
+        app:layout_constraintTop_toBottomOf="@+id/btnSregister" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
